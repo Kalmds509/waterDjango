@@ -1,0 +1,7 @@
+<h1>Liste des contacts</h1>
+{% for im in ims %}
+    <h2>{{ im.pseudo }}</h2>
+
+    <img src="{{ im.photo.url }}"/>
+    
+{% endfor %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block section %}
+
+    <!-- <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Login">
+    </form>   -->
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="id_non">Itilizate</label> 
+    <input type="text" id="id_non" name="non" required="required"><br><br>
+    <label for="id_modpas">Modpas</label> 
+    <input type="text" id="id_modpas" name="modpas" required="required"><br><br>
+    <button type="submit" class="btn btn_success">Konekte</button>
+   
+</form>
+<p>Ou poko yon itilizate???</p>
+<a href="http://127.0.0.1:8000/kreye_kont/">Enskri_kounya</a>
+
+
+{% endblock %}

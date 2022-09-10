@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+
+{% block section %}
+
+<form action="{}" method="post">
+    {% csrf_token %}
+    <div class="message">
+            Log in to use our service
+    </div>
+    <div class="input_konekte">
+        <input type="text" id="id_non" name="non" required="required" placeholder="Your username"><br><br>
+    
+        <input type="text" id="id_modpas" name="modpas" required="required" placeholder="password"><br><br>
+        <button type="submit" class="btn btn_success">Konekte</button>
+   </div>
+</form>
+<div class="kesyon">
+<p>Ou poko yon itilizate???</p>
+<a href="/kreye_kont/">Enskri_kounya</a>
+</div>
+
+
+{% endblock %}

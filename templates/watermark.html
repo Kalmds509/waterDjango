@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block section %}
+
+{% if request.user.is_authenticated %}
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="text" name="pseudo" placeholder="pseudo">
+    <input type="file" name="img" placeholder="image">
+
+    <!-- {{ form.as_p }} -->
+    <button enctype="multipart/form-data"  type="=submit" class="save btn btn-default">Save</button>
+
+</form>
+
+
+{% endif %}
+{% endblock %}
