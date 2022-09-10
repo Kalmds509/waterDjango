@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Watermarky</title>
   <meta charset="utf-8">
@@ -8,64 +9,82 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
-    .navbar{
-        background-color: aquamarine;
+    .navbar {
+      background-color: aquamarine;
     }
-    section{
+
+    section {
       text-align: center;
       padding-top: 8%;
     }
-    input{
-        width: 50%;
-        border-radius: 10%;
-    }
-    button{
-       
-        background-color:aquamarine;
-    }
-    .kesyon{
-        padding-top: 2%;
-    }
-    .message{
-        text-align: center;
-        
 
-    }
-    .input_konekte{
-
-        padding-top: 5%;
+    input {
+      width: 40%;
+      border-radius: 10%;
     }
 
+    button {
+
+      background-color: aquamarine;
+    }
+
+    .kesyon {
+      padding-top: 2%;
+    }
+
+    .message {
+      text-align: center;
+
+
+    }
+  
+
+    .input_konekte {
+
+      padding-top: 5%;
+    }
+    footer{
+       text-align: center;
+       background:#ccc;
+       position:absolute ;
+       bottom: 0;
+       width: 100%;
+       padding-top: 50px;
+       height: 50px;
+    }
   </style>
 </head>
+
 <body>
 
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Watermarky application</a>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Watermarky application</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home</a></li>
+        <li><a href="#">A propos de nous</a></li>
+        <li><a href="/dekonekte">deconnecter</a></li>
+        <li><a href="http://127.0.0.1:8000/upload/">service</a></li>
+      </ul>
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="/">Home</a></li>
-      <li><a href="#">A propos de nous</a></li>
-      <li><a href="#">connecter</a></li>
-      <li><a href="http://127.0.0.1:8000/upload/">service</a></li>
-    </ul>
-  </div>
-</nav>
-  
-<!-- <div class="container">
+  </nav>
+
+  <!-- <div class="container">
   <h3>Basic Navbar Example</h3>
   <p>A navigation bar is a navigation header that is placed at the top of the page.</p>
 </div> -->
-<section>
+  <section>
     {% block section %}
 
     {% endblock %}
-</section>
+  </section>
 
-<footer>
-    
-</footer>
+  <footer>
+ @copy right
+  
+  </footer>
 </body>
+
 </html>

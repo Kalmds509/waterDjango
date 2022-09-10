@@ -1,4 +1,5 @@
 from email import message
+from multiprocessing import context
 from  .models import Imaj
 from . import forms
 from django.shortcuts import render,redirect
@@ -16,20 +17,21 @@ def home_view(request):
 
 
 def konekte(request):
-    if request.method == "POST":
-        non = request.POST['non']
-        modpas = request.POST['modpas']
-        user = authenticate(username=non, password=modpas)
-        if user is not None:
-            login(request, user)
-            print("Idantifyan konekte")
+    
+        if request.method == "POST":
+            non = request.POST['non']
+            modpas = request.POST['modpas']
+            user = authenticate(username=non, password=modpas)
+            if user is not None:
+                login(request, user)
+                print("Idantifyan konekte")
 
-            return redirect('http://127.0.0.1:8000/upload/')
-        else:
-            print("No no")
-            
-    context = {}
-    return render(request, "watermark.html", context)
+                return redirect('/')
+            else:
+                print("No no")
+    
+        context = {}
+        return render(request, "konekte.html",context)
 
 def dekonekte(request):
     logout(request)
@@ -52,11 +54,9 @@ def uploadImaj(request):
     if request.method == 'POST':
        
         pseudo = request.POST.get('pseudo')
-        file = request.POST.get('img')
+        file = request.FILES.get('img')
 
-        # img = request.FILES.get('watermark-file')
-        # Imaj.objects.create(photo=img)
-
+        
         f = Imaj.objects.create(pseudo=pseudo, photo=file)
         f.save()
        
@@ -69,3 +69,12 @@ def uploadImaj(request):
 def voir_im(request):
     ims = Imaj.objects.all()
     return render(request,'voir_im.html',{'ims':ims})     
+
+def li_yon_atik(request,id):
+    li = Imaj.objects.get(id=id)
+    li.total_vizit += 1 
+    li.save()
+    context={'li':li}
+
+    return render(request,'atik_lan.html',context)
+

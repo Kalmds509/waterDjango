@@ -17,6 +17,9 @@ class Imaj(models.Model):
         verbose_name='Imaj'
         verbose_name_plural='Imaj yo'
 
+    def __str__(self):
+        return self.pseudo
+
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
         photo = Image.open(self.photo.path)
